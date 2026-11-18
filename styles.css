@@ -1,0 +1,151 @@
+:root {
+  --cream: #f3f6fa;      /* cool page background */
+  --cream-2: #ffffff;    /* cards / surfaces */
+  --ink: #15314d;        /* deep slate-blue text */
+  --ink-soft: #526880;
+  --line: #e3e9f0;
+  --blue: #15548c;       /* Foundation blue */
+  --blue-dark: #0f406b;
+  --accent: var(--blue);
+  --accent-dark: var(--blue-dark);
+  --green: #22a24a;      /* Foundation green */
+  --green-dark: #1b8139;
+  --ok: var(--green);
+  --shadow: 0 1px 2px rgba(21, 49, 77, .05), 0 10px 26px rgba(21, 49, 77, .07);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { width: 100%; max-width: 940px; margin: 0 auto; padding: 0 20px; }
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  color: var(--blue);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+a { color: var(--blue-dark); }
+
+/* ---- Header ---- */
+.site-header { border-bottom: 1px solid var(--line); background: var(--cream-2); }
+.header-inner { text-align: center; padding: 40px 20px 36px; }
+.logo-banner { width: 100%; max-width: 460px; height: auto; display: block; margin: 0 auto 22px; }
+.logo--missing { display: none; }
+h1 { margin: 0 0 12px; font-size: clamp(2rem, 5vw, 3rem); }
+.lede { margin: 0 auto; max-width: 52ch; color: var(--ink-soft); font-size: 1.08rem; }
+
+/* ---- Sections ---- */
+main { padding: 8px 0 48px; }
+section { margin-top: 44px; }
+h2 { font-size: 1.5rem; margin: 0 0 18px; }
+
+/* ---- Overall progress ---- */
+.overall { margin-top: 40px; }
+.overall-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+.overall-count { margin: 0; font-size: 1.1rem; }
+.overall-count strong { font-weight: 600; }
+.overall-pct { margin: 0; font-family: "Fraunces", serif; font-size: 1.5rem; color: var(--accent-dark); }
+
+.bar { background: #e3e9f0; border-radius: 999px; height: 12px; overflow: hidden; }
+.bar--lg { height: 18px; }
+.bar-fill {
+  height: 100%; width: 0; border-radius: 999px;
+  background: var(--green);
+  transition: width .5s ease;
+}
+
+/* ---- How it works ---- */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.steps li { display: flex; gap: 14px; align-items: flex-start; max-width: 62ch; }
+.step-n {
+  flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%;
+  background: var(--blue); color: #fff;
+  display: grid; place-items: center; font-weight: 600; font-size: .95rem;
+  font-family: "Fraunces", serif;
+}
+.steps em { font-style: normal; font-weight: 600; color: var(--ink); }
+
+/* ---- Shipping ---- */
+.ship-card {
+  background: var(--cream-2); border: 2px solid var(--blue);
+  border-radius: 12px; padding: 24px;
+  display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between;
+}
+#ship-address {
+  font-style: normal; font-size: 1.22rem; line-height: 1.5; font-weight: 500;
+  font-family: "Fraunces", serif;
+}
+.ship-note { color: var(--ink-soft); font-size: .96rem; margin: 12px 2px 0; }
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block; cursor: pointer; border: 0; border-radius: 9px;
+  font: inherit; font-weight: 600; padding: 11px 18px; text-decoration: none;
+  transition: background .15s ease, transform .05s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn-copy { background: var(--blue); color: #fff; white-space: nowrap; }
+.btn-copy:hover { background: var(--blue-dark); }
+.btn-copy.copied { background: var(--green); }
+.btn-buy {
+  background: var(--blue); color: #fff; text-align: center; width: 100%;
+  padding: 12px 18px;
+}
+.btn-buy:hover { background: var(--blue-dark); }
+.btn-report { background: var(--green); color: #fff; padding: 9px 14px; }
+.btn-report:hover { background: var(--green-dark); }
+.btn-report:disabled { opacity: .5; cursor: default; }
+
+/* ---- Item grid ---- */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; }
+.card {
+  background: var(--cream-2); border: 1px solid var(--line); border-radius: 14px;
+  overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column;
+}
+.card-img { aspect-ratio: 4 / 3; background: #eef2f7; display: grid; place-items: center; }
+.card-img img { width: 100%; height: 100%; object-fit: contain; padding: 14px; }
+/* no photo yet: show a slim brand accent strip instead of an empty box */
+.card-img--missing { aspect-ratio: auto; height: 8px; background: var(--green); }
+.card-img--missing img { display: none; }
+.card-body { padding: 18px; display: flex; flex-direction: column; gap: 12px; flex: 1 1 auto; }
+.card-name { margin: 0; font-size: 1.08rem; line-height: 1.25; }
+.card-count { margin: 0; font-size: .92rem; color: var(--ink-soft); }
+.card-count strong { color: var(--ink); font-weight: 600; }
+.card .btn-buy { margin-top: auto; }
+
+/* ---- Self-report: stepper + button in one horizontal row under the count ---- */
+.report { display: flex; align-items: stretch; gap: 10px; }
+.report .btn-report { flex: 1 1 auto; text-align: center; white-space: nowrap; }
+.stepper { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; flex: 0 0 auto; }
+.stepper button { border: 0; background: #f0e8d8; width: 30px; height: 34px; font-size: 1.1rem; cursor: pointer; color: var(--ink); }
+.stepper button:hover { background: #e6dcc6; }
+.qty { width: 44px; height: 34px; border: 0; text-align: center; font: inherit; font-weight: 600; -moz-appearance: textfield; }
+.qty::-webkit-outer-spin-button, .qty::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.report-thanks { margin: 0; color: var(--ok); font-weight: 600; font-size: .9rem; }
+
+.loading { color: var(--ink-soft); }
+
+/* ---- Footer ---- */
+.site-footer { border-top: 1px solid var(--line); background: var(--cream-2); margin-top: 20px; }
+.site-footer p { color: var(--ink-soft); padding: 28px 0; margin: 0; text-align: center; }
+
+@media (max-width: 560px) {
+  .header-inner { padding: 24px 20px; gap: 18px; }
+  .logo { width: 64px; height: 64px; }
+  .ship-card { flex-direction: column; align-items: stretch; }
+  .btn-copy { width: 100%; }
+}

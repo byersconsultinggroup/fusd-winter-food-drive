@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FUSD Foundation — Winter Food Drive</title>
+  <meta name="description" content="Help stock the FUSD Foundation Winter Food Drive. Pick an item, buy it on Walmart, ship it to our warehouse." />
+
+  <!-- Fraunces display serif + system sans body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <img src="img/logo.png" alt="Flagstaff Unified School District Foundation" class="logo-banner" onerror="this.classList.add('logo--missing')" />
+      <h1>Winter Food Drive</h1>
+      <p class="lede">Pick an item below, buy it on Walmart, and ship it straight to our warehouse. Every box helps us fill the shelves this winter.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- Overall progress -->
+    <section class="overall" aria-label="Overall progress">
+      <div class="overall-row">
+        <p class="overall-count"><strong id="overall-pledged">0</strong> of <strong id="overall-goal">0</strong> items ordered</p>
+        <p class="overall-pct"><span id="overall-pct">0</span>%</p>
+      </div>
+      <div class="bar bar--lg"><div class="bar-fill" id="overall-fill" style="width:0%"></div></div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how" aria-label="How it works">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><span class="step-n">1</span><span>Choose an item from the list and tap <em>Buy on Walmart</em>. Order any quantity you like.</span></li>
+        <li><span class="step-n">2</span><span>At checkout, ship it to the warehouse address below. Copy it so it is exact.</span></li>
+        <li><span class="step-n">3</span><span>Come back and tap <em>I ordered these</em> so we can keep the tally current.</span></li>
+      </ol>
+    </section>
+
+    <!-- Shipping address -->
+    <section class="ship" aria-label="Where to ship">
+      <h2>Ship everything here</h2>
+      <div class="ship-card">
+        <address id="ship-address">
+          FUSD Foundation — Winter Food Drive<br />
+          [ATTN / receiving name]<br />
+          [Street address]<br />
+          [City, State ZIP]
+        </address>
+        <button type="button" class="btn btn-copy" id="copy-address">Copy address</button>
+      </div>
+      <p class="ship-note">Please use this exact address at Walmart checkout. No gift receipt needed. Questions? <a id="contact-link" href="mailto:[contact email]">email us</a>.</p>
+    </section>
+
+    <!-- Items -->
+    <section class="items" aria-label="Items needed">
+      <h2>What we need</h2>
+      <div class="grid" id="item-grid">
+        <p class="loading" id="loading">Loading the list…</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Thank you for helping stock the FUSD Foundation Winter Food Drive.</p>
+    </div>
+  </footer>
+
+  <!-- Card template -->
+  <template id="card-tpl">
+    <article class="card">
+      <div class="card-img"><img alt="" loading="lazy" onerror="this.closest('.card-img').classList.add('card-img--missing')" /></div>
+      <div class="card-body">
+        <h3 class="card-name"></h3>
+        <div class="bar"><div class="bar-fill"></div></div>
+        <p class="card-count"><strong class="c-pledged">0</strong> of <strong class="c-goal">0</strong> ordered</p>
+        <div class="report">
+          <span class="stepper">
+            <button type="button" class="step-dn" aria-label="Fewer">–</button>
+            <input class="qty" type="number" min="1" max="500" value="1" inputmode="numeric" aria-label="Quantity you ordered" />
+            <button type="button" class="step-up" aria-label="More">+</button>
+          </span>
+          <button type="button" class="btn btn-report">Add to tally</button>
+        </div>
+        <p class="report-thanks" hidden>Thank you — added.</p>
+        <a class="btn btn-buy" target="_blank" rel="noopener">Buy on Walmart</a>
+      </div>
+    </article>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
