@@ -8,8 +8,8 @@
 
 /* ---- 1. CONFIG — fill these in after creating the Supabase project ---- */
 const CONFIG = {
-  SUPABASE_URL: "",          // e.g. https://abcd1234.supabase.co
-  SUPABASE_ANON_KEY: "",     // public anon key (safe to ship)
+  SUPABASE_URL: "https://yupryoyykdjrxyhhnezb.supabase.co",
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1cHJ5b3l5a2Rqcnh5aGhuZXpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUwMTQ5ODEsImV4cCI6MjExMDU5MDk4MX0.nw1ILHi7ajsPyFuDCjQ4ab-WmWVdzLxcZEkysriON4c",
   CONTACT_EMAIL: "ameebyers@hotmail.com",
   // Shipping address — one line per array entry.
   SHIP_ADDRESS: [

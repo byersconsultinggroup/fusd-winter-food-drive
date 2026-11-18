@@ -13,7 +13,10 @@ create table if not exists items (
 
 alter table items enable row level security;
 
--- anyone may read the list + counts
+-- anyone may read the list + counts.
+-- Tables made via raw SQL don't auto-grant to the anon role, so grant it
+-- explicitly (the RLS policy below then governs which rows are visible).
+grant select on items to anon, authenticated;
 drop policy if exists "public read" on items;
 create policy "public read" on items for select using (true);
 
