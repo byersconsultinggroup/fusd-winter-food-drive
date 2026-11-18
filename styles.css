@@ -128,10 +128,13 @@ h2 { font-size: 1.5rem; margin: 0 0 18px; }
   background: var(--cream-2); border: 1px solid var(--line); border-radius: 14px;
   overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column;
 }
-.card-img { aspect-ratio: 4 / 3; background: #eef2f7; display: grid; place-items: center; }
-.card-img img { width: 100%; height: 100%; object-fit: contain; padding: 14px; }
+.card-img {
+  height: 190px; background: #fff; overflow: hidden; padding: 14px;
+  display: grid; place-items: center;
+}
+.card-img img { display: block; width: auto; max-width: 100%; height: auto; max-height: 100%; object-fit: contain; }
 /* no photo yet: show a slim brand accent strip instead of an empty box */
-.card-img--missing { aspect-ratio: auto; height: 8px; background: var(--green); }
+.card-img--missing { height: 8px; padding: 0; background: var(--green); }
 .card-img--missing img { display: none; }
 .card-body { padding: 18px; display: flex; flex-direction: column; gap: 12px; flex: 1 1 auto; }
 .card-name { margin: 0; font-size: 1.08rem; line-height: 1.25; }
