@@ -68,6 +68,18 @@ h2 { font-size: 1.5rem; margin: 0 0 18px; }
   transition: width .5s ease;
 }
 
+/* ---- Share ---- */
+.share-bar {
+  margin-top: 22px;
+  background: var(--cream-2); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px 20px; box-shadow: var(--shadow);
+  display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; justify-content: space-between;
+}
+.share-bar p { margin: 0; color: var(--ink); font-weight: 500; }
+.btn-share { background: var(--green); color: #fff; white-space: nowrap; }
+.btn-share:hover { background: var(--green-dark); }
+.btn-share.copied { background: var(--blue); }
+
 /* ---- How it works ---- */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
 .steps li { display: flex; gap: 14px; align-items: flex-start; max-width: 62ch; }

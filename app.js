@@ -11,6 +11,8 @@ const CONFIG = {
   SUPABASE_URL: "https://yupryoyykdjrxyhhnezb.supabase.co",
   SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl1cHJ5b3l5a2Rqcnh5aGhuZXpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUwMTQ5ODEsImV4cCI6MjExMDU5MDk4MX0.nw1ILHi7ajsPyFuDCjQ4ab-WmWVdzLxcZEkysriON4c",
   CONTACT_EMAIL: "ameebyers@hotmail.com",
+  SHARE_URL: "https://tinyurl.com/FUSDwinterfooddrive",
+  SHARE_TEXT: "Help stock the FUSD Foundation Winter Food Drive — pick an item, buy it on Walmart, and ship it to us.",
   // Shipping address — one line per array entry.
   SHIP_ADDRESS: [
     "Taryn Lykins",
@@ -161,6 +163,25 @@ function renderStatic() {
   document.getElementById("ship-address").innerHTML = CONFIG.SHIP_ADDRESS.join("<br />");
   const link = document.getElementById("contact-link");
   link.href = "mailto:" + CONFIG.CONTACT_EMAIL;
+
+  const shareBtn = document.getElementById("share-btn");
+  shareBtn.addEventListener("click", async () => {
+    const payload = {
+      title: "FUSD Foundation Winter Food Drive",
+      text: CONFIG.SHARE_TEXT,
+      url: CONFIG.SHARE_URL
+    };
+    // Native share sheet (phones); fall back to copying the link.
+    if (navigator.share) {
+      try { await navigator.share(payload); } catch { /* user cancelled */ }
+      return;
+    }
+    try { await navigator.clipboard.writeText(CONFIG.SHARE_URL); } catch { /* blocked */ }
+    const label = shareBtn.textContent;
+    shareBtn.textContent = "Link copied ✓";
+    shareBtn.classList.add("copied");
+    setTimeout(() => { shareBtn.textContent = label; shareBtn.classList.remove("copied"); }, 2200);
+  });
 
   document.getElementById("copy-address").addEventListener("click", async (e) => {
     const text = CONFIG.SHIP_ADDRESS.join("\n");
