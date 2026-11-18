@@ -27,11 +27,11 @@ const CONFIG = {
    walmart   : DIRECT Walmart product URL (opens in new tab)
    image     : file in /img, or leave "" for a "photo coming soon" tile      */
 const ITEMS = [
-  { id: "cup-noodles",  name: "Nissin Cup Noodles, Chicken — 24-count",                goal: 328, walmart: "https://www.walmart.com/ip/Nissin-Cup-Noodles-Chicken-24-count/660106077", image: "" },
-  { id: "oatmeal",      name: "Quaker Instant Oatmeal Variety Pack — 52 packets",      goal: 302, walmart: "https://www.walmart.com/ip/Quaker-Instant-Oatmeal-Variety-Pack-52-Pk-1-46-oz/188248116", image: "" },
-  { id: "crackers",     name: "Lance ToastChee Peanut Butter Crackers — pack of 40",   goal: 194, walmart: "https://www.walmart.com/ip/Lance-ToastChee-Peanut-Butter-Crackers-1-52-Ounce-Pack-of-40/19692860137", image: "" },
-  { id: "chewy-bars",   name: "Quaker Chewy Bars Variety Pack — 60 ct",                goal: 131, walmart: "https://www.walmart.com/ip/Quaker-Chewy-Bars-Variety-Pack-60-Ct/186570364", image: "" },
-  { id: "fruity-snacks",name: "M&M Holiday Fruity Snacks Variety Pack — 100 count",     goal: 77,  walmart: "https://www.walmart.com/ip/M-M-Holiday-Fruity-Snacks-Variety-Pack-0-8-oz-Pouches-100-Count/21310573273", image: "" }
+  { id: "cup-noodles",  name: "Nissin Cup Noodles, Chicken — 24-count",                goal: 328, walmart: "https://www.walmart.com/ip/Nissin-Cup-Noodles-Chicken-24-count/660106077", image: "cup-noodles.jpg" },
+  { id: "oatmeal",      name: "Quaker Instant Oatmeal Variety Pack — 52 packets",      goal: 302, walmart: "https://www.walmart.com/ip/Quaker-Instant-Oatmeal-Variety-Pack-52-Pk-1-46-oz/188248116", image: "oatmeal.jpg" },
+  { id: "crackers",     name: "Lance ToastChee Peanut Butter Crackers — pack of 40",   goal: 194, walmart: "https://www.walmart.com/ip/Lance-ToastChee-Peanut-Butter-Crackers-1-52-Ounce-Pack-of-40/19692860137", image: "crackers.jpg" },
+  { id: "chewy-bars",   name: "Quaker Chewy Bars Variety Pack — 60 ct",                goal: 131, walmart: "https://www.walmart.com/ip/Quaker-Chewy-Bars-Variety-Pack-60-Ct/186570364", image: "chewy-bars.jpg" },
+  { id: "fruity-snacks",name: "Member's Mark Holiday Fruity Snacks — 100 count",       goal: 77,  walmart: "https://www.walmart.com/ip/M-M-Holiday-Fruity-Snacks-Variety-Pack-0-8-oz-Pouches-100-Count/21310573273", image: "fruity-snacks.jpg" }
 ];
 
 /* ============================================================

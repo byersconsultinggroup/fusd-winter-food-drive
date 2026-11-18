@@ -82,16 +82,24 @@
         <h3 class="card-name"></h3>
         <div class="bar"><div class="bar-fill"></div></div>
         <p class="card-count"><strong class="c-pledged">0</strong> of <strong class="c-goal">0</strong> ordered</p>
-        <div class="report">
-          <span class="stepper">
-            <button type="button" class="step-dn" aria-label="Fewer">–</button>
-            <input class="qty" type="number" min="1" max="500" value="1" inputmode="numeric" aria-label="Quantity you ordered" />
-            <button type="button" class="step-up" aria-label="More">+</button>
-          </span>
-          <button type="button" class="btn btn-report">Add to tally</button>
+
+        <div class="step">
+          <p class="step-note"><span class="step-tag">1</span> Order as many as you like on Walmart.</p>
+          <a class="btn btn-buy" target="_blank" rel="noopener">Buy on Walmart</a>
         </div>
-        <p class="report-thanks" hidden>Thank you — added.</p>
-        <a class="btn btn-buy" target="_blank" rel="noopener">Buy on Walmart</a>
+
+        <div class="step">
+          <p class="step-note"><span class="step-tag">2</span> After ordering, add the number you bought to our tally.</p>
+          <div class="report">
+            <span class="stepper">
+              <button type="button" class="step-dn" aria-label="Fewer">–</button>
+              <input class="qty" type="number" min="1" max="500" value="1" inputmode="numeric" aria-label="Number you ordered" />
+              <button type="button" class="step-up" aria-label="More">+</button>
+            </span>
+            <button type="button" class="btn btn-report">Add to tally</button>
+          </div>
+          <p class="report-thanks" hidden>Thank you — added to the tally.</p>
+        </div>
       </div>
     </article>
   </template>
